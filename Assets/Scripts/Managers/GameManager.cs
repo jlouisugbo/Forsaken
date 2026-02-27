@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
         SaveSpot[] saveSpots = FindObjectsByType<SaveSpot>(FindObjectsSortMode.None);
         foreach (SaveSpot spot in saveSpots) {
             if (spot.SpotID == saveData.lastSaveSpotID) {
-                playerStateMachine.transform.position = spot.transform.position;
+                playerStateMachine.transform.position = new Vector3(spot.transform.position.x, playerStateMachine.transform.position.y, playerStateMachine.transform.position.z);
                 playerStateMachine.Grounded = true;
                 break;
             }
